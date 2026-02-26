@@ -1,17 +1,10 @@
 name: Build documentation
-
 on:
-  push:
-    branches:
-      - main
-      - doc-builder*
-      - v*-release
-
+  workflow_dispatch: {}
 permissions: {}
-
 jobs:
-   build:
-    uses: huggingface/doc-builder/.github/workflows/build_main_documentation.yml@ba4b74d11c46d884a4cf6497687c090f55f027d9  # main from 2025-09-05
+  build:
+    uses: huggingface/doc-builder/.github/workflows/build_main_documentation.yml@ba4b74d11c46d884a4cf6497687c090f55f027d9
     with:
       commit_sha: ${{ github.sha }}
       package: peft
