@@ -11,8 +11,7 @@ jobs:
   run_all_tests_single_gpu:
     strategy:
       fail-fast: false
-    runs-on:
-      group: aws-g6-4xlarge-plus
+    runs-on: ubuntu-latest
     env:
       CUDA_VISIBLE_DEVICES: '0'
       TEST_TYPE: single_gpu
@@ -91,8 +90,7 @@ jobs:
   run_all_tests_multi_gpu:
     strategy:
       fail-fast: false
-    runs-on:
-      group: aws-g6-12xlarge-plus
+    runs-on: ubuntu-latest
     env:
       CUDA_VISIBLE_DEVICES: 0,1
       TEST_TYPE: multi_gpu
